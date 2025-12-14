@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Product {
 
+
     private int id;
     private String productName;
     private int price;
@@ -16,6 +17,9 @@ public class Product {
                 ", productName='" + productName + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    public Product() {
     }
 
     public Product(int id, String productName, int price) {

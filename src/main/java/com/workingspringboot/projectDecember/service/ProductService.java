@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    List<Product> allProducts = Arrays.asList(new Product(101, "iPhone", 120000));
+    List<Product> allProducts = new ArrayList<>(Arrays.asList(new Product(101, "iPhone", 120000)));
 
     public List<Product> getAllProducts(){
         return allProducts;
