@@ -14,20 +14,30 @@ public class ProductController {
     ProductService productService;
 
     //RequestMapping("/getAllProducts")
-    @RequestMapping(value = "/getAllProducts", method = RequestMethod.GET)
+    @RequestMapping(value = "/products/all", method = RequestMethod.GET)
     public List<Product> getAllProducts(){
         return productService.getAllProducts();
     }
 
-    @GetMapping("/getProductById/{id}")
+    @GetMapping("/products/{id}")
     public Product getProductById(@PathVariable int id){
 
         return  productService.getProductById(id);
     }
 
-    @PostMapping("/addProduct")
+    @PostMapping("/products/add")
     public void addProduct(@RequestBody Product product){
         productService.addProduct(product);
+    }
+
+    @PutMapping("/products/update")
+    public void updateProduct(@RequestBody Product product){
+        productService.updateProduct(product);
+    }
+
+    @DeleteMapping("/products/{prodId}")
+    public void deleteProduct(@PathVariable int prodId){
+        productService.deleteProduct(prodId);
     }
 
 }
